@@ -1,6 +1,11 @@
 body {
-    margin:10;
+    /* margin:10; */
     height: 90vh;
+}
+
+div {
+    padding: 5px;
+    /* border: 1px solid black; */
 }
 
 .container {
@@ -8,7 +13,6 @@ body {
     overflow: auto;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    gap: 10px;
     height: 100%;
 }
 
@@ -17,9 +21,9 @@ body {
     grid-column: 1/2;
     grid-row-start: 1;
     grid-row-end: 4;
-    display: grid;
-    grid-template-rows: 1fr 4fr 2fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .header {
@@ -35,6 +39,17 @@ body {
     grid-column: 1/3;
     height: 1.5em;
     display: flex;
+    align-self:center;
+}
+
+
+.search-bar {
+    width: 100%; /* Make the search bar take full width of its container */
+    max-width: 400px; /* Set a maximum width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Make the search bar oval */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .search>* {
@@ -94,7 +109,7 @@ body {
     grid-column: 2/4;
     grid-row: 2/4;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 10px;
 }
 
@@ -109,13 +124,14 @@ body {
 .projects>h1 {
     grid-column: 1/3;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1em;
     font-style: bold;
 }
 
 .card {
-    background-color: hsl(43, 96%, 54%);
-    padding: 5px;
+    background-color: hwb(199 67% 18%);
+    padding: 10px;
+    font-size:smaller;
 }
 
 .container .main-content .main-sidebar {
@@ -123,10 +139,12 @@ body {
     grid-template-rows: 1fr 1fr;
     row-gap: 10px;
     grid-column: 2/3;
+    grid-row: 1/3;
 }
 
 .title {
-    font-style: bold;
+    margin-top: 0;
+    font-weight: bold;
 }
 
 
@@ -138,13 +156,61 @@ body {
 } */
 
 .announcements {
-    background-color: #f7f7f7;
-    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-bottom:black;
+    margin: 10px;
+}
+
+.announce {
+    border-bottom: 1px solid black;
+}
+
+.announce-container{
+    display: flex;
+    flex-direction: column;
+    background-color: hwb(0 84% 16%);
+    
 }
 
 .trending {
-    background-color: #f7f7f7;
-    grid-row:2/3
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.trending-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    font-size:smaller;
+}
+
+.trending-card img{
+    height: 4em;
+    width: auto;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    margin-right: 5px;
+}
+
+.handle {
+    display: flex;
+    font-size: smaller;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-items:end;
+    margin:0;
+}
+
+.user-name {
+    font-size: smaller;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    color: gray;
+    align-items: self-start;
+    margin: 0;
 }
 
 .logo {
@@ -156,6 +222,7 @@ body {
     font-size: 2em;
     color: white;
     height: 1em;
+    margin-top:10px;
 }
 
 
@@ -184,9 +251,13 @@ body {
     height: 1.5em;
 }
 
-.container div {
-    padding: 10px;
-    border: 1px solid black;
+.announce>p:first-child {
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.announce>p:nth-child(2) {
+    font-size: smaller;
 }
 
 .nav {
@@ -229,4 +300,10 @@ button {
     color: white;
     font-style: bold;
     text-align: center;
+}
+
+.sidebar-title {
+    font-size: 1em;
+    font-style: bold;
+    margin: 0;
 }
